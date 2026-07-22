@@ -23,7 +23,12 @@ env:
 
 
 jobs:
+  integration:
+    uses: karthikrajasivaraj-gif/python-reusable-repo/.github/workflows/python-app.yml@main
+    permissions:
+      contents: read
   build:
+    needs: integration 
 
     runs-on: ubuntu-latest
     permissions:
